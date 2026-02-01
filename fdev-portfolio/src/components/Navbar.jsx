@@ -1,6 +1,5 @@
-import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box, useMediaQuery, useTheme } from "@mui/material";
+import { AppBar, Toolbar, Typography, Drawer, List, ListItem, ListItemText, Box, useMediaQuery, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
-import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import logo from "../asscets/logo.png";
 
