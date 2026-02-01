@@ -85,7 +85,7 @@ export default function Home() {
                 </Typography>
                 </Box>
                 <Box sx={{ mb: 3, order: { xs: 2, md: 2 } }}>
-                  <img src={arcimage} alt="Arc Image" style={{ width: '100%', height: '100%' }} />
+                  <img src={arcimage} alt="Company Logo" style={{ width: '100%', height: '100%' }} />
                 </Box>
               </Box>
 

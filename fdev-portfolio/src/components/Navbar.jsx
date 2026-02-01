@@ -5,8 +5,8 @@ import logo from "../asscets/logo.png";
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -33,24 +33,7 @@ export default function Navbar() {
           </Typography>
         </Box>
 
-        {/* {isMobile ? (
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={toggleDrawer(true)}
-          >
-            <MenuIcon />
-          </IconButton>
-        ) : (
-          <>
-            <Button color="inherit" component={Link} to="/">Home</Button>
-            <Button color="inherit" component={Link} to="/about">About</Button>
-            <Button color="inherit" component={Link} to="/services">Services</Button>
-            <Button color="inherit" component={Link} to="/projects">Projects</Button>
-            <Button color="inherit" component={Link} to="/contact">Contact</Button>
-          </>
-        )} */}
+
 
         <Drawer
           anchor="right"
