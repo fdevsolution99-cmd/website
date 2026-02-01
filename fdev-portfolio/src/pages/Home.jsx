@@ -235,17 +235,15 @@ export default function Home() {
                         Get In Touch
                       </Typography>
                       <Typography variant="body2" align="center" gutterBottom>
-                        📧 Email: info@fdevsolutions.com
+                        📧 Email: hr@fdevsol.com
                       </Typography>
                       <Typography variant="body2" align="center" gutterBottom>
-                        📞 Phone: +1 (123) 456-7890
+                        📞 Phone: +91 63097 59843
                       </Typography>
                       <Typography variant="body2" align="center" gutterBottom>
-                        📍 Address: 123 Tech Street, Innovation City, IC 12345
+                        📍 Address: 501,5th floor, Veekay Prime, madhapur, Hyderabad, telangana 500081
                       </Typography>
-                      <Typography variant="body2" align="center">
-                        🌐 Website: www.fdevsolutions.com
-                      </Typography>
+
                     </CardContent>
                   </Card>
                 </Grid>
@@ -277,7 +275,7 @@ export default function Home() {
                         Business Hours
                       </Typography>
                       <Typography variant="body2" align="center" gutterBottom>
-                        🕒 Monday - Friday: 9:00 AM - 6:00 PM
+                        🕒 Monday - Friday: 10:00 AM - 6:00 PM
                       </Typography>
                       <Typography variant="body2" align="center" gutterBottom>
                         🕒 Saturday: 10:00 AM - 4:00 PM
