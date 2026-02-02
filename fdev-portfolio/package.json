@@ -40,10 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "overrides": {
-    "rimraf": "^4.0.0",
-    "sourcemap-codec": "@jridgewell/sourcemap-codec",
-    "rollup-plugin-terser": "@rollup/plugin-terser"
   }
 }
