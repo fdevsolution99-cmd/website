@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Button, TextField,Paper } from "@mui/material";
+import { Box, Container, Typography, Button, TextField,Paper, Link } from "@mui/material";
 import { Grid, Card, CardContent} from "@mui/material";
 import Navbar from "../components/Navbar";
 import arcimage from "../asscets/logo.png";
@@ -225,69 +225,110 @@ export default function Home() {
             </Grid>
         </Paper>
 
-            <Container sx={{ py: 5 }}>
-
-              <Grid container spacing={3} justifyContent="center">
-                <Grid item xs={12} sm={6} md={4}>
-                  <Card elevation={3} sx={{ minHeight: 200, width: { xs: '100%', sm: 250 }, transition: 'all 0.3s ease', '&:hover': { elevation: 8, transform: 'scale(1.05)', backgroundColor: '#f5f5f5' } }}>
-                    <CardContent>
-                      <Typography variant="h6" align="center" gutterBottom>
-                        Get In Touch
-                      </Typography>
-                      <Typography variant="body2" align="center" gutterBottom>
-                        📧 Email: hr@fdevsol.com
-                      </Typography>
-                      <Typography variant="body2" align="center" gutterBottom>
-                        📞 Phone: +91 63097 59843
-                      </Typography>
-                      <Typography variant="body2" align="center" gutterBottom>
-                        📍 Address: 501,5th floor, Veekay Prime, madhapur, Hyderabad, telangana 500081
-                      </Typography>
-
-                    </CardContent>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                  <Card elevation={3} sx={{ minHeight: 200, width: { xs: '100%', sm: 250 }, transition: 'all 0.3s ease', '&:hover': { elevation: 8, transform: 'scale(1.05)', backgroundColor: '#f5f5f5' } }}>
-                    <CardContent>
-                      <Typography variant="h6" align="center" gutterBottom>
-                        Follow Us
-                      </Typography>
-                      <Typography variant="body2" align="center" gutterBottom>
-                        🔗 LinkedIn: /company/fdev-solutions
-                      </Typography>
-                      <Typography variant="body2" align="center" gutterBottom>
-                        🐦 Twitter: @FDEV_Solutions
-                      </Typography>
-                      <Typography variant="body2" align="center" gutterBottom>
-                        📘 Facebook: /FDEV.Solutions
-                      </Typography>
-                      <Typography variant="body2" align="center">
-                        📷 Instagram: @fdev_solutions
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                  <Card elevation={3} sx={{ minHeight: 200, width: { xs: '100%', sm: 250 }, transition: 'all 0.3s ease', '&:hover': { elevation: 8, transform: 'scale(1.05)', backgroundColor: '#f5f5f5' } }}>
-                    <CardContent>
-                      <Typography variant="h6" align="center" gutterBottom>
-                        Business Hours
-                      </Typography>
-                      <Typography variant="body2" align="center" gutterBottom>
-                        🕒 Monday - Friday: 10:00 AM - 6:00 PM
-                      </Typography>
-                      <Typography variant="body2" align="center" gutterBottom>
-                        🕒 Saturday: 10:00 AM - 4:00 PM
-                      </Typography>
-                      <Typography variant="body2" align="center">
-                        🕒 Sunday: Closed
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
+          <Container sx={{py: 5}}>
+            <Grid container spacing={12} >
+              
+              {/* Get in Touch */}
+              <Grid item xs={12} md={4} >
+                <Typography variant="h6" gutterBottom >
+                  Get In Touch
+                </Typography>
+                <Typography variant="body2" mb={2}>
+                  📧 Email:{" "}
+                  <Link href="mailto:hr@fdevsol.com" color="inherit" underline="hover">
+                    hr@fdevsol.com
+                  </Link>
+                </Typography>
+                <Typography variant="body2" mb={2}>
+                  📞 Phone:{" "}
+                  <Link href="tel:+916309759843" color="inherit" underline="hover">
+                    +91 63097 59843
+                  </Link>
+                </Typography>
+                <Typography variant="body2" sx={{ mt: 1 }} mb={2}>
+                  📍 501, 5th Floor, Veekay Prime,  
+                  Madhapur, Hyderabad, Telangana – 500081
+                </Typography>
               </Grid>
-            </Container>
+
+              {/* Social Links */}
+              <Grid item xs={12} md={4}>
+                <Typography variant="h6" gutterBottom>
+                  Follow Us
+                </Typography>
+
+                <Typography variant="body2" mb={2}>
+                  🔗{" "}
+                  <Link
+                    href="https://www.linkedin.com/in/future-developer-07b29a3aa"
+                    target="_blank"
+                    rel="noopener"
+                    color="inherit"
+                    underline="hover"
+                  >
+                    LinkedIn
+                  </Link>
+                </Typography>
+
+                <Typography variant="body2" mb={2}>
+                  🐦{" "}
+                  <Link
+                    href="https://x.com/fdelsolution"
+                    target="_blank"
+                    rel="noopener"
+                    color="inherit"
+                    underline="hover"
+                  >
+                    Twitter (X)
+                  </Link>
+                </Typography>
+
+                <Typography variant="body2" mb={2}>
+                  📘{" "}
+                  <Link
+                    href="https://www.facebook.com/share/1FnSrowQrd/"
+                    target="_blank"
+                    rel="noopener"
+                    color="inherit"
+                    underline="hover"
+                  >
+                    Facebook
+                  </Link>
+                </Typography>
+
+                <Typography variant="body2" mb={2}>
+                  📷{" "}
+                  <Link
+                    href="https://www.instagram.com/fdevsolution99"
+                    target="_blank"
+                    rel="noopener"
+                    color="inherit"
+                    underline="hover"
+                  >
+                    Instagram
+                  </Link>
+                </Typography>
+              </Grid>
+
+              {/* Business Hours */}
+              <Grid item xs={12} md={4}>
+                <Typography variant="h6" gutterBottom>
+                  Business Hours
+                </Typography>
+                <Typography variant="body2" mb={2}>
+                  🕒 Mon – Fri: 10:00 AM – 6:00 PM
+                </Typography>
+                <Typography variant="body2" mb={2}>
+                  🕒 Saturday: 10:00 AM – 4:00 PM
+                </Typography>
+                <Typography variant="body2" mb={2}>
+                  🕒 Sunday: Closed
+                </Typography>
+              </Grid>
+
+            </Grid>
+
+          </Container>
 
       </Container>
 
