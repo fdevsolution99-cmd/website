@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Drawer, List, ListItem, ListItemText, Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "../asscets/logo.png";
@@ -33,21 +33,14 @@ export default function Navbar() {
           </Typography>
         </Box>
 
+        <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Button color="inherit" component={Link} to="/">Home</Button>
+          <Button color="inherit" component={Link} to="/projects">Services</Button>
+          <Button color="inherit" component={Link} to="/services">Projects</Button>
+          <Button color="inherit" component={Link} to="/admin/add-project">Blog</Button>
+          <Button color="inherit" component={Link} to="/contact">Contact</Button>
+        </Box>
 
-
-        <Drawer
-          anchor="right"
-          open={drawerOpen}
-          onClose={toggleDrawer(false)}
-        >
-          <List sx={{ width: 250 }}>
-            {menuItems.map((item) => (
-              <ListItem button key={item.text} component={Link} to={item.path} onClick={toggleDrawer(false)}>
-                <ListItemText primary={item.text} />
-              </ListItem>
-            ))}
-          </List>
-        </Drawer>
       </Toolbar>
     </AppBar>
   );

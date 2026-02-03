@@ -1,39 +1,54 @@
-import { Box, Container, Typography, Button, TextField,Paper, Link } from "@mui/material";
+import { Box, Container, Typography, Button, TextField,Paper  } from "@mui/material";
 import { Grid, Card, CardContent} from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import arcimage from "../asscets/logo.png";
 
 const services = [
   {
     title: "Web Development",
-    description: "We create responsive, scalable websites and web applications using modern technologies like React, Node.js, and more to meet your business needs."
+    description:
+      "We create responsive, scalable websites and web applications using modern technologies like React, Node.js, and more to meet your business needs.",
+    link: "/services/webappservices",
   },
   {
     title: "Mobile Application",
-    description: "Build native and cross-platform mobile apps for iOS and Android, ensuring seamless user experiences and high performance."
+    description:
+      "Build native and cross-platform mobile apps for iOS and Android, ensuring seamless user experiences and high performance.",
+    link: "/services/mobile-application",
   },
   {
     title: "UI / UX Design",
-    description: "Design intuitive and visually appealing user interfaces and experiences that enhance usability and customer satisfaction."
+    description:
+      "Design intuitive and visually appealing user interfaces and experiences that enhance usability and customer satisfaction.",
+    link: "/services/ui-uxdesign",
   },
   {
     title: "Cloud Solutions",
-    description: "Leverage cloud platforms like AWS, Azure, and Google Cloud for secure, scalable, and cost-effective infrastructure solutions."
+    description:
+      "Leverage cloud platforms like AWS, Azure, and Google Cloud for secure, scalable, and cost-effective infrastructure solutions.",
+    link: "/services/cloudservices",
   },
   {
     title: "Enterprise Software",
-    description: "Develop custom enterprise software tailored to streamline operations, improve efficiency, and support large-scale business processes."
+    description:
+      "Develop custom enterprise software tailored to streamline operations, improve efficiency, and support large-scale business processes.",
+    link: "/services/enterprise-software",
   },
   {
     title: "Product Engineering",
-    description: "End-to-end product development from ideation to deployment, focusing on innovation, quality, and rapid delivery."
+    description:
+      "End-to-end product development from ideation to deployment, focusing on innovation, quality, and rapid delivery.",
+    link: "/services/product-engineering",
   },
-    {
-    title: "Intership",
-    description: "we will provide a internship to the students to improve they talent and boast-up they skills."
+  {
+    title: "Internship & Training",
+    description:
+      "We provide internships to students to improve their talent and boost their skills.",
+    link: "/services/training-intership",
   },
-  
 ];
+
 
 const projects = [
   {
@@ -135,16 +150,18 @@ export default function Home() {
               <Grid container spacing={3} justifyContent="center">
                 {services.map((service) => (
                   <Grid item xs={12} sm={6} md={4} key={service.title}>
-                    <Card elevation={4} sx={{ minHeight: 200, width: { xs: '100%', sm: 250 }, transition: 'all 0.3s ease', '&:hover': { elevation: 8, transform: 'scale(1.05)', backgroundColor: '#f5f5f5' } }}>
-                      <CardContent>
-                        <Typography variant="h6" align="center" gutterBottom>
-                          {service.title}
-                        </Typography>
-                        <Typography variant="body2" align="center">
-                          {service.description}
-                        </Typography>
-                      </CardContent>
-                    </Card>
+                    <RouterLink to={service.link} style={{ textDecoration: 'none' }}>
+                      <Card elevation={4} sx={{ minHeight: 200, width: { xs: '100%', sm: 250 }, transition: 'all 0.3s ease', '&:hover': { elevation: 8, transform: 'scale(1.05)', backgroundColor: '#f5f5f5', cursor: 'pointer' } }}>
+                        <CardContent>
+                          <Typography variant="h6" align="center" gutterBottom>
+                            {service.title}
+                          </Typography>
+                          <Typography variant="body2" align="center">
+                            {service.description}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </RouterLink>
                   </Grid>
                 ))}
               </Grid>
@@ -158,16 +175,18 @@ export default function Home() {
               <Grid container spacing={3} justifyContent="center">
                 {projects.map((project) => (
                   <Grid item xs={12} sm={6} md={4} key={project.title}>
-                    <Card elevation={3} sx={{ minHeight: 200, width: { xs: '100%', sm: 250 } }}>
-                      <CardContent>
-                        <Typography variant="h6" align="center" gutterBottom>
-                          {project.title}
-                        </Typography>
-                        <Typography variant="body2" align="center">
-                          {project.description}
-                        </Typography>
-                      </CardContent>
-                    </Card>
+                    <RouterLink to="/projects" style={{ textDecoration: 'none' }}>
+                      <Card elevation={3} sx={{ minHeight: 200, width: { xs: '100%', sm: 250 }, transition: 'all 0.3s ease', '&:hover': { elevation: 8, transform: 'scale(1.05)', backgroundColor: '#f5f5f5', cursor: 'pointer' } }}>
+                        <CardContent>
+                          <Typography variant="h6" align="center" gutterBottom>
+                            {project.title}
+                          </Typography>
+                          <Typography variant="body2" align="center">
+                            {project.description}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </RouterLink>
                   </Grid>
                 ))}
               </Grid>
@@ -225,110 +244,6 @@ export default function Home() {
             </Grid>
         </Paper>
 
-          <Container sx={{py: 5}}>
-            <Grid container spacing={12} >
-              
-              {/* Get in Touch */}
-              <Grid item xs={12} md={4} >
-                <Typography variant="h6" gutterBottom >
-                  Get In Touch
-                </Typography>
-                <Typography variant="body2" mb={2}>
-                  📧 Email:{" "}
-                  <Link href="mailto:hr@fdevsol.com" color="inherit" underline="hover">
-                    hr@fdevsol.com
-                  </Link>
-                </Typography>
-                <Typography variant="body2" mb={2}>
-                  📞 Phone:{" "}
-                  <Link href="tel:+916309759843" color="inherit" underline="hover">
-                    +91 63097 59843
-                  </Link>
-                </Typography>
-                <Typography variant="body2" sx={{ mt: 1 }} mb={2}>
-                  📍 501, 5th Floor, Veekay Prime,  
-                  Madhapur, Hyderabad, Telangana – 500081
-                </Typography>
-              </Grid>
-
-              {/* Social Links */}
-              <Grid item xs={12} md={4}>
-                <Typography variant="h6" gutterBottom>
-                  Follow Us
-                </Typography>
-
-                <Typography variant="body2" mb={2}>
-                  🔗{" "}
-                  <Link
-                    href="https://www.linkedin.com/in/future-developer-07b29a3aa"
-                    target="_blank"
-                    rel="noopener"
-                    color="inherit"
-                    underline="hover"
-                  >
-                    LinkedIn
-                  </Link>
-                </Typography>
-
-                <Typography variant="body2" mb={2}>
-                  🐦{" "}
-                  <Link
-                    href="https://x.com/fdelsolution"
-                    target="_blank"
-                    rel="noopener"
-                    color="inherit"
-                    underline="hover"
-                  >
-                    Twitter (X)
-                  </Link>
-                </Typography>
-
-                <Typography variant="body2" mb={2}>
-                  📘{" "}
-                  <Link
-                    href="https://www.facebook.com/share/1FnSrowQrd/"
-                    target="_blank"
-                    rel="noopener"
-                    color="inherit"
-                    underline="hover"
-                  >
-                    Facebook
-                  </Link>
-                </Typography>
-
-                <Typography variant="body2" mb={2}>
-                  📷{" "}
-                  <Link
-                    href="https://www.instagram.com/fdevsolution99"
-                    target="_blank"
-                    rel="noopener"
-                    color="inherit"
-                    underline="hover"
-                  >
-                    Instagram
-                  </Link>
-                </Typography>
-              </Grid>
-
-              {/* Business Hours */}
-              <Grid item xs={12} md={4}>
-                <Typography variant="h6" gutterBottom>
-                  Business Hours
-                </Typography>
-                <Typography variant="body2" mb={2}>
-                  🕒 Mon – Fri: 10:00 AM – 6:00 PM
-                </Typography>
-                <Typography variant="body2" mb={2}>
-                  🕒 Saturday: 10:00 AM – 4:00 PM
-                </Typography>
-                <Typography variant="body2" mb={2}>
-                  🕒 Sunday: Closed
-                </Typography>
-              </Grid>
-
-            </Grid>
-
-          </Container>
 
       </Container>
 
