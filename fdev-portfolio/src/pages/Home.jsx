@@ -50,6 +50,7 @@ const services = [
 ];
 
 
+
 const projects = [
   {
     title: "E-Commerce Platform",
@@ -88,20 +89,108 @@ export default function Home() {
       >
         <Container>         
               <Box display={"flex"} sx={{ flexDirection: { xs: "column", md: "row" } }}>
-                <Box sx={{ mb: 3, mt: 10, order: { xs: 1, md: 1 } }}>          
-                  <Typography variant="h3" fontWeight="bold" sx={{ textShadow: '2px 2px 4px #FFD700' }}>
-                FDEV Solution Pvt Ltd
-              </Typography>
-              <Typography variant="h6" sx={{ my: 1, }}>
-                Web • Mobile • Cloud • Enterprise Solutions
-              </Typography>
-                  <Typography variant="body1" sx={{ mb: 3, }}>
-                FDEV Solutions is a technology-driven software company focused on delivering reliable, scalable, and innovative digital solutions. We specialize in custom software development, web and mobile applications, and enterprise solutions that help businesses grow in a competitive digital landscape.
-                </Typography>
+<Box
+  sx={{
+    mt: { xs: 5, md: 10 },
+    width: { xs: "100%", md: "130%" },
+    order: { xs: 1, md: 1 },
+    textAlign: { xs: "center", md: "left" },
+  }}
+>
+  {/* Company Name */}
+  <Typography
+    variant="h3"
+    fontWeight="bold"
+    sx={{
+      fontSize: { xs: "1.8rem", sm: "2.2rem", md: "3rem" },
+      textShadow: "2px 2px 4px #FFD700",
+      opacity: 0,
+      animation: "fadeUp 0.6s ease forwards",
+    }}
+  >
+    FDEV Solution Pvt Ltd
+  </Typography>
+
+  {/* Tagline */}
+  <Typography
+    variant="h6"
+    sx={{
+      my: 1,
+      fontSize: { xs: "1rem", md: "1.25rem" },
+      opacity: 0,
+      animation: "fadeUp 0.6s ease forwards",
+      animationDelay: "0.4s",
+    }}
+  >
+    Web • Mobile • Cloud • Enterprise Solutions
+  </Typography>
+
+  {/* Description – line by line */}
+  {[
+    "FDEV Solutions is a technology-driven software company",
+    "focused on delivering reliable, scalable, and innovative digital solutions.",
+    "We specialize in custom software development, web and mobile applications,",
+    "and enterprise solutions that help businesses grow",
+    "in a competitive digital landscape.",
+  ].map((line, index) => (
+    <Typography
+      key={index}
+      variant="body1"
+      sx={{
+        fontSize: { xs: "0.95rem", md: "1rem" },
+        lineHeight: 1.7,
+        opacity: 0,
+        animation: "fadeUp 0.6s ease forwards",
+        animationDelay: `${0.8 + index * 0.25}s`,
+      }}
+    >
+      {line}
+    </Typography>
+  ))}
+
+  {/* Animation Keyframes */}
+  <style>
+    {`
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `}
+  </style>
+</Box>
+
+
+                <Box
+                  sx={{
+                  
+                    order: { xs: 2, md: 2 },
+                    overflow: "hidden",
+                    borderRadius: 3,
+                    transition: "all 0.4s ease",
+                    cursor: "pointer",
+                    "&:hover img": {
+                      transform: "scale(1.05)",
+                      filter: "drop-shadow(0 0 20px rgba(255, 215, 0, 0.8))",
+                    },
+                  }}
+                >
+                  <img
+                    src={arcimage}
+                    alt="Company Logo"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      transition: "all 0.4s ease",
+                    }}
+                  />
                 </Box>
-                <Box sx={{ mb: 3, order: { xs: 2, md: 2 } }}>
-                  <img src={arcimage} alt="Company Logo" style={{ width: '100%', height: '100%' }} />
-                </Box>
+
               </Box>
 
               <Container sx={{ mb: 3, ml:-3 }}>
