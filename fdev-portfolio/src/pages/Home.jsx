@@ -89,81 +89,81 @@ export default function Home() {
       >
         <Container>         
               <Box display={"flex"} sx={{ flexDirection: { xs: "column", md: "row" } }}>
-<Box
-  sx={{
-    mt: { xs: 5, md: 10 },
-    width: { xs: "100%", md: "130%" },
-    order: { xs: 1, md: 1 },
-    textAlign: { xs: "center", md: "left" },
-  }}
->
-  {/* Company Name */}
-  <Typography
-    variant="h3"
-    fontWeight="bold"
-    sx={{
-      fontSize: { xs: "1.8rem", sm: "2.2rem", md: "3rem" },
-      textShadow: "2px 2px 4px #FFD700",
-      opacity: 0,
-      animation: "fadeUp 0.6s ease forwards",
-    }}
-  >
-    FDEV Solution Pvt Ltd
-  </Typography>
+            <Box
+              sx={{
+                mt: { xs: 5, md: 10 },
+                width: { xs: "100%", md: "130%" },
+                order: { xs: 1, md: 1 },
+                textAlign: { xs: "center", md: "left" },
+              }}
+            >
+              {/* Company Name */}
+              <Typography
+                variant="h3"
+                fontWeight="bold"
+                sx={{
+                  fontSize: { xs: "1.8rem", sm: "2.2rem", md: "3rem" },
+                  textShadow: "2px 2px 4px #FFD700",
+                  opacity: 0,
+                  animation: "fadeUp 0.6s ease forwards",
+                }}
+              >
+                FDEV Solution Pvt Ltd
+              </Typography>
 
-  {/* Tagline */}
-  <Typography
-    variant="h6"
-    sx={{
-      my: 1,
-      fontSize: { xs: "1rem", md: "1.25rem" },
-      opacity: 0,
-      animation: "fadeUp 0.6s ease forwards",
-      animationDelay: "0.4s",
-    }}
-  >
-    Web • Mobile • Cloud • Enterprise Solutions
-  </Typography>
+              {/* Tagline */}
+              <Typography
+                variant="h6"
+                sx={{
+                  my: 1,
+                  fontSize: { xs: "1rem", md: "1.25rem" },
+                  opacity: 0,
+                  animation: "fadeUp 0.6s ease forwards",
+                  animationDelay: "0.4s",
+                }}
+              >
+                Web • Mobile • Cloud • Enterprise Solutions
+              </Typography>
 
-  {/* Description – line by line */}
-  {[
-    "FDEV Solutions is a technology-driven software company",
-    "focused on delivering reliable, scalable, and innovative digital solutions.",
-    "We specialize in custom software development, web and mobile applications,",
-    "and enterprise solutions that help businesses grow",
-    "in a competitive digital landscape.",
-  ].map((line, index) => (
-    <Typography
-      key={index}
-      variant="body1"
-      sx={{
-        fontSize: { xs: "0.95rem", md: "1rem" },
-        lineHeight: 1.7,
-        opacity: 0,
-        animation: "fadeUp 0.6s ease forwards",
-        animationDelay: `${0.8 + index * 0.25}s`,
-      }}
-    >
-      {line}
-    </Typography>
-  ))}
+              {/* Description – line by line */}
+              {[
+                "FDEV Solutions is a technology-driven software company",
+                "focused on delivering reliable, scalable, and innovative digital solutions.",
+                "We specialize in custom software development, web and mobile applications,",
+                "and enterprise solutions that help businesses grow",
+                "in a competitive digital landscape.",
+              ].map((line, index) => (
+                <Typography
+                  key={index}
+                  variant="body1"
+                  sx={{
+                    fontSize: { xs: "0.95rem", md: "1rem" },
+                    lineHeight: 1.7,
+                    opacity: 0,
+                    animation: "fadeUp 0.6s ease forwards",
+                    animationDelay: `${0.8 + index * 0.25}s`,
+                  }}
+                >
+                  {line}
+                </Typography>
+              ))}
 
-  {/* Animation Keyframes */}
-  <style>
-    {`
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(12px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    `}
-  </style>
-</Box>
+              {/* Animation Keyframes */}
+              <style>
+                {`
+                  @keyframes fadeUp {
+                    from {
+                      opacity: 0;
+                      transform: translateY(12px);
+                    }
+                    to {
+                      opacity: 1;
+                      transform: translateY(0);
+                    }
+                  }
+                `}
+              </style>
+            </Box>
 
 
                 <Box
@@ -192,43 +192,89 @@ export default function Home() {
                 </Box>
 
               </Box>
+<Container
+  sx={{
+    mb: 3,
+    ml: { xs: 0, md: -3 },
+    px: { xs: 2, md: 0 },
+  }}
+>
+  <Typography
+    variant="body1"
+    sx={{
+      mb: 3,
+      fontSize: { xs: "0.95rem", md: "1rem" },
+      lineHeight: 1.7,
+      textAlign: { xs: "justify", md: "left" },
+    }}
+  >
+    FDEV Solutions is a technology-driven software company focused on delivering
+    reliable, scalable, and innovative digital solutions. We specialize in
+    custom software development, web and mobile applications, and enterprise
+    solutions that help businesses grow in a competitive digital landscape.
+  </Typography>
 
-              <Container sx={{ mb: 3, ml:-3 }}>
-              <Typography variant="body1" sx={{ mb: 3, }}>
-                FDEV Solutions is a technology-driven software company focused on delivering reliable, scalable, and innovative digital solutions. We specialize in custom software development, web and mobile applications, and enterprise solutions that help businesses grow in a competitive digital landscape.
-                </Typography>
-              <Typography variant="body1" sx={{ mb: 3, }}>
-                FDEV Solution Pvt Ltd is a leading provider of innovative technology solutions, specializing in web development, mobile applications, cloud services, and enterprise software. With a team of expert developers and designers, we deliver cutting-edge solutions that drive business growth and digital transformation. Our commitment to quality, innovation, and customer satisfaction sets us apart in the competitive tech landscape.
-              </Typography>
-                <Typography variant="body1" sx={{ mb: 3, }}>
-                  Our mission is to empower businesses through technology by delivering reliable, cost-effective, and innovative software solutions. We aim to simplify complex problems and create digital products that enhance productivity, performance, and user experience.
-                </Typography>
-              <Box
-                sx={{
-                  overflow: "hidden",
-                  whiteSpace: "nowrap",
-                  backgroundColor: "000",
-                  color: "#fff",
-                  py: 1,
-                  px: 2,
-                  borderRadius: 1,
-                }}
-              >
-                <Typography
-                  variant="body2"
-                  sx={{
-                    display: "inline-block",
-                    animation: "scroll 15s linear infinite",
-                    "@keyframes scroll": {
-                      "0%": { transform: "translateX(100%)" },
-                      "100%": { transform: "translateX(-100%)" },
-                    },
-                  }}
-                >
-                  🚀 Transforming Ideas into Reality • 💡 Innovative Solutions for Modern Businesses • 🌐 Global Reach, Local Expertise • 📈 Driving Digital Success
-                </Typography>
-              </Box>
-            </Container>
+  <Typography
+    variant="body1"
+    sx={{
+      mb: 3,
+      fontSize: { xs: "0.95rem", md: "1rem" },
+      lineHeight: 1.7,
+      textAlign: { xs: "justify", md: "left" },
+    }}
+  >
+    FDEV Solution Pvt Ltd is a leading provider of innovative technology
+    solutions, specializing in web development, mobile applications, cloud
+    services, and enterprise software. With a team of expert developers and
+    designers, we deliver cutting-edge solutions that drive business growth and
+    digital transformation.
+  </Typography>
+
+  <Typography
+    variant="body1"
+    sx={{
+      mb: 3,
+      fontSize: { xs: "0.95rem", md: "1rem" },
+      lineHeight: 1.7,
+      textAlign: { xs: "justify", md: "left" },
+    }}
+  >
+    Our mission is to empower businesses through technology by delivering
+    reliable, cost-effective, and innovative software solutions. We aim to
+    simplify complex problems and create digital products that enhance
+    productivity, performance, and user experience.
+  </Typography>
+
+  {/* Scrolling Highlight Text */}
+  <Box
+    sx={{
+      overflow: "hidden",
+      whiteSpace: "nowrap",
+      backgroundColor: "#000",
+      color: "#fff",
+      py: 1,
+      px: 2,
+      borderRadius: 1,
+    }}
+  >
+    <Typography
+      variant="body2"
+      sx={{
+        display: "inline-block",
+        fontSize: { xs: "0.8rem", md: "0.9rem" },
+        animation: "scroll 18s linear infinite",
+        "@keyframes scroll": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      }}
+    >
+      🚀 Transforming Ideas into Reality • 💡 Innovative Solutions for Modern
+      Businesses • 🌐 Global Reach, Local Expertise • 📈 Driving Digital Success
+    </Typography>
+  </Box>
+</Container>
+
 
 
             <Container sx={{ py: 5 }}>
