@@ -106,7 +106,7 @@ export default function Footer() {
                 </Typography>
 
                 <Typography variant="body2" mb={2}>
-                  🕒 Sunday: Closed
+                  🕒 Saturday & Sunday: Closed
                 </Typography>
               </Grid>
 
