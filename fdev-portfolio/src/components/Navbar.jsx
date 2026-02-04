@@ -1,27 +1,21 @@
-import { AppBar, Toolbar, Typography, Drawer, List, ListItem, ListItemText, Box, Button } from "@mui/material";
+import { AppBar, Toolbar, Typography, Box, Button, IconButton, Menu, MenuItem } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+
 import logo from "../asscets/logo.png";
 
 export default function Navbar() {
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
 
-
-
-  const toggleDrawer = (open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-    setDrawerOpen(open);
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
   };
 
-  const menuItems = [
-    { text: 'Home', path: '/' },
-    { text: 'About', path: '/about' },
-    { text: 'Services', path: '/services' },
-    { text: 'Projects', path: '/projects' },
-    { text: 'Contact', path: '/contact' },
-  ];
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <AppBar position="sticky" sx={{ background: "linear-gradient(135deg, #092311, #000)" }}>
@@ -41,6 +35,48 @@ export default function Navbar() {
           <Button color="inherit" component={Link} to="/contact">Contact</Button>
         </Box>
 
+        <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={handleMenu}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={open}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}>
+              <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link to="/projects" style={{ textDecoration: 'none', color: 'inherit' }}>Services</Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link to="/services" style={{ textDecoration: 'none', color: 'inherit' }}>Projects</Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link to="/admin/add-project" style={{ textDecoration: 'none', color: 'inherit' }}>Blog</Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link to="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>Contact</Link>
+            </MenuItem>
+          </Menu>
+        </Box>
       </Toolbar>
     </AppBar>
   );

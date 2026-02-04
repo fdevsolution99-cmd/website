@@ -172,24 +172,17 @@ export default function Home() {
                 Our Projects
               </Typography>
 
-              <Grid container spacing={3} justifyContent="center">
-                {projects.map((project) => (
-                  <Grid item xs={12} sm={6} md={4} key={project.title}>
-                    <RouterLink to="/projects" style={{ textDecoration: 'none' }}>
-                      <Card elevation={3} sx={{ minHeight: 200, width: { xs: '100%', sm: 250 }, transition: 'all 0.3s ease', '&:hover': { elevation: 8, transform: 'scale(1.05)', backgroundColor: '#f5f5f5', cursor: 'pointer' } }}>
-                        <CardContent>
-                          <Typography variant="h6" align="center" gutterBottom>
-                            {project.title}
-                          </Typography>
-                          <Typography variant="body2" align="center">
-                            {project.description}
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                    </RouterLink>
-                  </Grid>
-                ))}
-              </Grid>
+              <Box sx={{ textAlign: 'center', py: 5 }}>
+                <Typography variant="h1" sx={{ fontSize: '6rem', fontWeight: 'bold', color: '#FFD700' }}>
+                  {projects.length}
+                </Typography>
+                <Typography variant="h5" sx={{ mb: 3 }}>
+                  Projects Completed
+                </Typography>
+                <Button variant="contained" component={RouterLink} to="/projects" size="large">
+                  View All Projects
+                </Button>
+              </Box>
             </Container>
               <Typography variant="h4" align="center" gutterBottom sx={{ textShadow: '2px 2px 4px #FFD700' }}>
                 Contact Us
