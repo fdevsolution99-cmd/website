@@ -29,9 +29,8 @@ export default function Navbar() {
 
         <Box sx={{ display: { xs: "none", md: "flex" } }}>
           <Button color="inherit" component={Link} to="/">Home</Button>
-          <Button color="inherit" component={Link} to="/projects">Services</Button>
-          <Button color="inherit" component={Link} to="/services">Projects</Button>
-          <Button color="inherit" component={Link} to="/admin/add-project">Blog</Button>
+          <Button color="inherit" component={Link} to="/projects">Projects</Button>
+          <Button color="inherit" component={Link} to="/Blog">Blog</Button>
           <Button color="inherit" component={Link} to="/contact">Contact</Button>
         </Box>
 
@@ -64,13 +63,10 @@ export default function Navbar() {
               <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to="/projects" style={{ textDecoration: 'none', color: 'inherit' }}>Services</Link>
+              <Link to="/projects" style={{ textDecoration: 'none', color: 'inherit' }}>Projects</Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to="/services" style={{ textDecoration: 'none', color: 'inherit' }}>Projects</Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link to="/admin/add-project" style={{ textDecoration: 'none', color: 'inherit' }}>Blog</Link>
+              <Link to="/Blog" style={{ textDecoration: 'none', color: 'inherit' }}>Blog</Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
               <Link to="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>Contact</Link>

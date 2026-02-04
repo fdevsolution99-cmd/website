@@ -12,6 +12,7 @@ import Mobileapplication from "./services/Mobileapplication";
 import Productengineering from "./services/Product-engineering";
 import Trainingintership from "./services/training-intership";
 import Uiuxdesign from "./services/Ui-uxdesign";
+import Blog from "./pages/blog";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/Blog" element={<Blog />} />
         <Route path="/services/webappservices" element={<Webdevelopment />} />
         <Route path="/services/cloudservices" element={<CloudSolutionService />} />
         <Route path="/services/enterprise-software" element={<Enterprisesoftware />} />
