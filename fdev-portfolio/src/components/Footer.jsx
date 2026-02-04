@@ -104,9 +104,7 @@ export default function Footer() {
                 <Typography variant="body2" mb={2}>
                   🕒 Mon – Fri: 10:00 AM – 6:00 PM
                 </Typography>
-                <Typography variant="body2" mb={2}>
-                  🕒 Saturday: 10:00 AM – 4:00 PM
-                </Typography>
+
                 <Typography variant="body2" mb={2}>
                   🕒 Sunday: Closed
                 </Typography>
