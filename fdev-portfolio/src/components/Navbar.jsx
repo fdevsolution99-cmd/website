@@ -1,4 +1,13 @@
-import { AppBar, Toolbar, Typography, Box, Button, IconButton, Menu, MenuItem } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -17,60 +26,113 @@ export default function Navbar() {
     setAnchorEl(null);
   };
 
+  const navItems = [
+    { label: "Home", path: "/" },
+    { label: "Projects", path: "/projects" },
+    { label: "Blog", path: "/Blog" },
+    { label: "Contact", path: "/contact" },
+  ];
+
   return (
-    <AppBar position="sticky" sx={{ background: "linear-gradient(135deg, #092311, #000)" }}>
-      <Toolbar>
-        <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
-          <img src={logo} alt="Logo" style={{ height: '60px', marginTop:'1%'}} />
-          <Typography variant="h6" sx={{ textShadow: '2px 2px 4px #FFD700' }}>
+    <AppBar
+      position="sticky"
+      sx={{
+        background: "linear-gradient(135deg, #092311, #000)",
+      }}
+    >
+      <Toolbar sx={{ minHeight: { xs: 64, md: 72 } }}>
+        {/* Logo + Brand */}
+        <Box
+          component={Link}
+          to="/"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
+            color: "inherit",
+            flexGrow: 1,
+            gap: 1,
+          }}
+        >
+          <Box
+            component="img"
+            src={logo}
+            alt="Logo"
+            sx={{
+              height: { xs: 40, md: 50 },
+              width: "auto",
+            }}
+          />
+          <Typography
+            variant="h6"
+            sx={{
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              textShadow: "2px 2px 4px #FFD700",
+              whiteSpace: "nowrap",
+            }}
+          >
             FDEV Solution Pvt Ltd
           </Typography>
         </Box>
 
-        <Box sx={{ display: { xs: "none", md: "flex" } }}>
-          <Button color="inherit" component={Link} to="/">Home</Button>
-          <Button color="inherit" component={Link} to="/projects">Projects</Button>
-          <Button color="inherit" component={Link} to="/Blog">Blog</Button>
-          <Button color="inherit" component={Link} to="/contact">Contact</Button>
+        {/* Desktop Menu */}
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
+          {navItems.map((item) => (
+            <Button
+              key={item.label}
+              color="inherit"
+              component={Link}
+              to={item.path}
+              sx={{
+                fontWeight: 500,
+                "&:hover": {
+                  color: "#FFD700",
+                },
+              }}
+            >
+              {item.label}
+            </Button>
+          ))}
         </Box>
 
+        {/* Mobile Menu */}
         <Box sx={{ display: { xs: "flex", md: "none" } }}>
           <IconButton
-            size="large"
-            edge="start"
             color="inherit"
-            aria-label="menu"
+            edge="end"
             onClick={handleMenu}
+            aria-label="menu"
           >
             <MenuIcon />
           </IconButton>
+
           <Menu
-            id="menu-appbar"
             anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
             open={open}
             onClose={handleClose}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
           >
-            <MenuItem onClick={handleClose}>
-              <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link to="/projects" style={{ textDecoration: 'none', color: 'inherit' }}>Projects</Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link to="/Blog" style={{ textDecoration: 'none', color: 'inherit' }}>Blog</Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link to="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>Contact</Link>
-            </MenuItem>
+            {navItems.map((item) => (
+              <MenuItem key={item.label} onClick={handleClose}>
+                <Link
+                  to={item.path}
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    width: "100%",
+                  }}
+                >
+                  {item.label}
+                </Link>
+              </MenuItem>
+            ))}
           </Menu>
         </Box>
       </Toolbar>
