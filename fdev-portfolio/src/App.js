@@ -26,6 +26,7 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import PublicIcon from "@mui/icons-material/Public";
 import StorageIcon from "@mui/icons-material/Storage";
 import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
+import Logo from './asscets/logo.png';
 
 // ─── THEME ────────────────────────────────────────────────────────────────
 const theme = createTheme({
@@ -115,18 +116,28 @@ function AnimatedNumber({ target }) {
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
-function FDevLogo({ size = 36 }) {
+function FDevLogo({ size =  40}) {
   return (
     <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, userSelect: "none" }}>
       <Box sx={{
         width: size, height: size, flexShrink: 0,
-        background: "linear-gradient(135deg, #D4A017 0%, #A07810 100%)",
+        // background: "linear-gradient(135deg, #D4A017 0%, #A07810 100%)",
         display: "flex", alignItems: "center", justifyContent: "center",
-        fontFamily: "'Playfair Display', serif", fontWeight: 700,
-        fontSize: size * 0.52, color: "#0A0A0A",
-        boxShadow: `0 0 ${size * 0.55}px rgba(212,160,23,0.4)`,
+        // boxShadow: `0 0 ${size * 0.55}px rgba(212,160,23,0.4)`,
         clipPath: "polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)",
-      }}>F</Box>
+        overflow: "hidden",
+      }}>
+        <img 
+          src={Logo} 
+          alt="FDev Logo" 
+          style={{ 
+            width: "150%", 
+            height: "100%", 
+            objectFit: "cover",
+            display: "block"
+          }} 
+        />
+      </Box>
       <Box>
         <Typography sx={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: size * 0.5, lineHeight: 1, color: "#F5F0E8", letterSpacing: "0.03em" }}>
           FDEV<Box component="span" sx={{ color: "#D4A017" }}> Solutions</Box>
@@ -216,7 +227,7 @@ export default function FDevWebsite() {
         ::-webkit-scrollbar-thumb:hover { background: #D4A017; }
       `}</style>
 
-      <Box sx={{ background: "#0A0A0A", minHeight: "100vh", overflowX: "hidden" }}>
+      <Box sx={{ background: "#061d0b", minHeight: "100vh", overflowX: "hidden" }}>
 
         {/* ══ NAVBAR ══════════════════════════════════════════════════════════ */}
         <AppBar position="fixed" elevation={0} sx={{
@@ -452,8 +463,8 @@ export default function FDevWebsite() {
         </Box>
 
         {/* ══ TEAM ════════════════════════════════════════════════════════════ */}
-        <Box id="team" sx={{ py: { xs: 10, md: 15 }, background: "rgba(212,160,23,0.015)", borderTop: "1px solid rgba(212,160,23,0.07)" }}>
-          <Container maxWidth="lg">
+        <Box id="team" sx={{ py: {}, background: "rgba(212,160,23,0.015)", borderTop: "1px solid rgba(212,160,23,0.07)" }}>
+          <Container>
             <Box sx={{ mb: 8 }}>
               <SectionEyebrow>The People</SectionEyebrow>
               <GoldRule />
@@ -461,10 +472,10 @@ export default function FDevWebsite() {
                 Meet the <Box component="span" sx={{ color: "#D4A017" }}>Team</Box>
               </Typography>
             </Box>
-            <Grid container spacing={3}>
+            <Grid container spacing={12} display={'flex'} flexDirection={'row'}>
               {TEAM.map(m => (
-                <Grid item xs={12} sm={6} md={3} key={m.name}>
-                  <Card sx={{ textAlign: "center", transition: "all 0.35s ease", "&:hover": { transform: "translateY(-8px)", border: `1px solid ${alpha(m.color, 0.35)}`, boxShadow: `0 20px 60px rgba(0,0,0,0.45), 0 0 36px ${alpha(m.color, 0.09)}` } }}>
+                <Grid item xs={12} sm={6} md={3} key={m.name} display={'flex'} flexDirection={'column'}>
+                  <Card sx={{ textAlign: "center",width: '100%', transition: "all 0.35s ease", "&:hover": { transform: "translateY(-8px)", border: `1px solid ${alpha(m.color, 0.35)}`, boxShadow: `0 20px 60px rgba(0,0,0,0.45), 0 0 36px ${alpha(m.color, 0.09)}`  } }}>
                     <CardContent sx={{ p: { xs: 3, md: 3.5 } }}>
                       <Avatar sx={{ width: 74, height: 74, mx: "auto", mb: 2.5, background: `linear-gradient(135deg, ${m.color}, ${alpha(m.color, 0.38)})`, fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: "1.35rem", color: "#0A0A0A", boxShadow: `0 0 28px ${alpha(m.color, 0.35)}` }}>
                         {m.avatar}
@@ -553,8 +564,8 @@ export default function FDevWebsite() {
               <Grid item xs={12} md={4}>
                 <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
                   {[
-                    { icon: <EmailIcon />,      label: "Email",    value: "hello@fdevsolutions.in" },
-                    { icon: <PhoneIcon />,      label: "Phone",    value: "+91 98765 43210"        },
+                    { icon: <EmailIcon />,      label: "Email",    value: "hr@fdevsol.com" },
+                    { icon: <PhoneIcon />,      label: "Phone",    value: "+91 63097 59843"        },
                     { icon: <LocationOnIcon />, label: "Location", value: "Hyderabad, Telangana"   },
                   ].map(({ icon, label, value }) => (
                     <Box key={label} sx={{ display: "flex", gap: 2.5, alignItems: "flex-start" }}>
