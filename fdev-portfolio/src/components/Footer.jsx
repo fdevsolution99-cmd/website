@@ -4,12 +4,12 @@ export default function Footer() {
   return (
     <Box
       sx={{
-        minHeight: "50vh",
-        display: "flex",
-        alignItems: "center",
-        background: "linear-gradient(135deg, #000100, #000)",
-        color: "#fff",
-        px: { xs: 2, md: 0 },
+        minHeight: "40vh",
+        py: 4,
+        background: 'linear-gradient(135deg, rgba(248, 250, 252, 0.9), rgba(226, 232, 240, 0.9))',
+        backdropFilter: 'blur(20px)',
+        borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+        color: 'text.primary',
       }}
     >
       <Grid
@@ -58,8 +58,9 @@ export default function Footer() {
               href="https://www.linkedin.com/in/future-developer-07b29a3aa"
               target="_blank"
               rel="noopener"
-              color="inherit"
+              color="primary"
               underline="hover"
+              sx={{ fontWeight: 500 }}
             >
               LinkedIn
             </Link>

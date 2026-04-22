@@ -12,7 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import logo from "../asscets/logo.png";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -37,7 +37,9 @@ export default function Navbar() {
     <AppBar
       position="sticky"
       sx={{
-        background: "linear-gradient(135deg, #092311, #000)",
+        backdropFilter: 'blur(20px)',
+        background: 'rgba(255, 255, 255, 0.95)',
+        boxShadow: '0 2px 20px rgba(0,0,0,0.1)',
       }}
     >
       <Toolbar sx={{ minHeight: { xs: 64, md: 72 } }}>
@@ -67,7 +69,7 @@ export default function Navbar() {
             variant="h6"
             sx={{
               fontSize: { xs: "1rem", md: "1.2rem" },
-              textShadow: "2px 2px 4px #FFD700",
+            fontWeight: 700,
               whiteSpace: "nowrap",
             }}
           >
@@ -86,7 +88,8 @@ export default function Navbar() {
               sx={{
                 fontWeight: 500,
                 "&:hover": {
-                  color: "#FFD700",
+                  color: "#6366F1",
+                  transform: 'scale(1.05)',
                 },
               }}
             >

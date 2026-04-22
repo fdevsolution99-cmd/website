@@ -1,55 +1,56 @@
-import {
-  Box,
-  Grid,
-  Card,
-  CardContent,
-  Typography,
-  CardActionArea,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  Button
-} from "@mui/material";
-import { useState } from "react";
+import { Container, Typography, Grid } from "@mui/material";
 import Navbar from "../components/Navbar";
+import ProjectCard from '../components/ProjectCard';
 
-const projects = [
+const projectsData = [
   {
-    name: "E-Commerce Platform",
-    description:
-      "A full-featured e-commerce platform with product listings, cart management, secure payments, and admin dashboard.",
-    tech: "React.js, Node.js, PostgreSQL, Stripe, AWS",
-    link: "https://example.com/ecommerce",
-    image: "../asscets/ecommerce.jpg"
+    title: "E-Commerce Platform",
+    description: "Complete shopping solution with Stripe payments, inventory & admin dashboard",
+    image: "/api/placeholder/400/250",
+    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    github: 'https://github.com/demo/ecommerce',
+    live: 'https://ecommerce-demo.com'
   },
   {
-    name: "HRMS System",
-    description:
-      "Human Resource Management System for employee management, attendance tracking, payroll processing, and reporting.",
-    tech: "React.js, Node.js, PostgreSQL",
-    link: "https://example.com/hrms"
+    title: "HRMS System",
+    description: "Employee management with payroll, attendance & performance tracking",
+    image: "/api/placeholder/400/250",
+    tags: ['React', 'Express', 'PostgreSQL', 'Redux'],
+    github: 'https://github.com/demo/hrms',
+    live: 'https://hrms-demo.com'
   },
   {
-    name: "Learning Management System",
-    description:
-      "LMS for managing trainers, students, courses, assignments, and video-based learning modules.",
-    tech: "React.js, Express.js, AWS S3",
-    link: "https://example.com/lms"
+    title: "LMS Platform",
+    description: "Online learning with video courses, quizzes & progress tracking",
+    image: "/api/placeholder/400/250", 
+    tags: ['Next.js', 'Prisma', 'Tailwind', 'Vimeo'],
+    github: 'https://github.com/demo/lms',
+    live: 'https://lms-demo.com'
   },
   {
-    name: "Payroll Application",
-    description:
-      "Payroll system for salary calculation, payslip generation, tax deductions, and employee self-service.",
-    tech: "React.js, Node.js, PostgreSQL",
-    link: "https://example.com/payroll"
+    title: "Payroll App", 
+    description: "Automated salary processing with tax compliance & reports",
+    image: "/api/placeholder/400/250",
+    tags: ['Vue.js', 'Firebase', 'Chart.js'],
+    github: 'https://github.com/demo/payroll',
+    live: 'https://payroll-demo.com'
   },
   {
-    name: "Enterprise Dashboard",
-    description:
-      "Enterprise analytics dashboard with role-based access, real-time KPIs, and data visualization.",
-    tech: "React.js, MUI, APIs",
-    link: "https://example.com/dashboard"
-  }
+    title: "Enterprise Dashboard",
+    description: "Real-time analytics with 50+ KPIs & custom reporting",
+    image: "/api/placeholder/400/250",
+    tags: ['React', 'D3.js', 'Socket.io', 'Elasticsearch'],
+    github: 'https://github.com/demo/dashboard',
+    live: 'https://dashboard-demo.com'
+  },
+  {
+    title: "CRM System",
+    description: "Customer relationship management with automation workflows",
+    image: "/api/placeholder/400/250",
+    tags: ['Angular', 'NestJS', 'TypeORM', 'RabbitMQ'],
+    github: 'https://github.com/demo/crm',
+    live: 'https://crm-demo.com'
+  },
 ];
 
 export default function Projects() {
@@ -70,27 +71,22 @@ export default function Projects() {
     <>
       <Navbar />
 
-      <Box sx={{ py: 6, background: "linear-gradient(135deg, #092311, #000)", color: "#fff" }}>
-        <Typography variant="h4" align="center" gutterBottom>
-          Our Projects
+      <Container sx={{ py: 8 }}>
+        <Typography variant="h2" align="center" gutterBottom sx={{ mb: 12 }}>
+          Featured Projects
+        </Typography>
+        <Typography variant="h5" align="center" color="text.secondary" sx={{ mb: 8, maxWidth: 600, mx: 'auto' }}>
+          Real-world applications that power businesses worldwide
         </Typography>
 
-        <Grid container spacing={3} sx={{ mt: 2 }}>
-          {projects.map((project) => (
-            <Grid item xs={12} sm={6} md={4} key={project.name}>
-              <Card elevation={4}>
-                <CardActionArea onClick={() => handleOpen(project)}>
-                  <CardContent>
-                    <Typography variant="h6" align="center">
-                      {project.name}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+        <Grid container spacing={4}>
+          {projectsData.map((project, index) => (
+            <Grid item xs={12} md={6} lg={4} key={project.title}>
+              <ProjectCard {...project} />
             </Grid>
           ))}
         </Grid>
-      </Box>
+      </Container>
 
       {/* Project Details Popup */}
       <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>

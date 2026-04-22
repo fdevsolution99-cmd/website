@@ -2,7 +2,8 @@ import { Box, Container, Typography, Button, TextField,Paper  } from "@mui/mater
 import { Grid, Card, CardContent} from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import arcimage from "../asscets/logo.png";
+import Hero from "../components/Hero";
+import arcimage from "../assets/logo.png";
 
 const services = [
   {
@@ -77,16 +78,14 @@ const projects = [
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <Box
-        sx={{
-          minHeight: "84vh",
-          display: "flex",
-          alignItems: "center",
-          background: "linear-gradient(135deg, #092311, #000)",
-          color: "#fff",
-        }}
-      >
+      <Hero />
+      <Container sx={{ py: 8 }}>
+        <Typography variant="h2" align="center" gutterBottom className="fade-in-up">
+          Welcome to FDEV Solutions
+        </Typography>
+        <Typography variant="h6" align="center" color="text.secondary" sx={{ mb: 8, maxWidth: 800, mx: 'auto' }}>
+          Technology-driven software company delivering reliable, scalable, and innovative digital solutions
+        </Typography>
         <Container>         
               <Box display={"flex"} sx={{ flexDirection: { xs: "column", md: "row" } }}>
             <Box
@@ -273,10 +272,7 @@ export default function Home() {
       Businesses • 🌐 Global Reach, Local Expertise • 📈 Driving Digital Success
     </Typography>
   </Box>
-</Container>
-
-
-
+        </Container>
             <Container sx={{ py: 5 }}>
               <Typography variant="h4" align="center" gutterBottom sx={{ textShadow: '2px 2px 4px #FFD700' }}>
                 Our Services
@@ -375,8 +371,7 @@ export default function Home() {
 
       </Container>
 
-        
-      </Box>
-    </>
+   </Container>
+   </>   
   );
 }

@@ -5,11 +5,18 @@ import image2 from '../asscets/image2.jpeg';
 import image3 from '../asscets/image3.jpeg';
 import image4 from '../asscets/image4.jpeg';
 import Navbar from "../components/Navbar";
+import { Container } from "@mui/material";
 
 const Blog = () => {
   return (<>
   <Navbar/>
-    <Box sx={{ padding: 2, textAlign: 'center',background: "linear-gradient(135deg, #092311, #000)", color: "#fff" }}>
+    <Container sx={{ py: 8 }}>
+        <Typography variant="h2" align="center" gutterBottom className="fade-in-up">
+          Latest Blog Posts
+        </Typography>
+        <Typography variant="h6" align="center" color="text.secondary" sx={{ mb: 8 }}>
+          Insights, trends, and updates from the FDEV Solutions team
+        </Typography>
       <Typography variant="h4" component="h1" gutterBottom>
         Blog Images
       </Typography>
@@ -49,7 +56,7 @@ const Blog = () => {
           </Card>
         </Grid>
       </Grid>
-    </Box>
+    </Container>
     </>
   );
 };

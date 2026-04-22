@@ -1,6 +1,7 @@
 import React from "react";
 import {Typography, List, ListItem, ListItemText, Divider,Box } from "@mui/material";
 import Navbar from "../components/Navbar"
+import { Container, Paper } from "@mui/material";
 
 const WebAppServices = () => {
 const services = [
@@ -32,8 +33,26 @@ const services = [
   return (
     <>
     <Navbar/>
-    <Box sx={{ py: 5,background: "linear-gradient(135deg, #092311, #000)", color: "#fff"}}>
-      <Typography variant="h4" gutterBottom>
+    <Container sx={{ py: 8 }}>
+      <Typography variant="h2" align="center" gutterBottom className="fade-in-up">
+        Web Development Services
+      </Typography>
+      <Typography variant="h6" align="center" color="text.secondary" sx={{ mb: 6 }}>
+        Comprehensive web solutions from concept to deployment
+      </Typography>
+      <Paper className="glass" sx={{ p: 6 }}>
+        <List dense sx={{ maxWidth: 800, mx: 'auto' }}>
+          {services.map((point, i) => (
+            <ListItem key={i} sx={{ py: 1.5 }}>
+              <ListItemText 
+                primary={`• ${point}`} 
+                primaryTypographyProps={{ variant: 'body1' }}
+              />
+            </ListItem>
+          ))}
+        </List>
+      </Paper>
+      <Typography variant="h2" align="center" gutterBottom className="fade-in-up">
         Web Application Development Services
       </Typography>
       <List dense>
@@ -44,7 +63,7 @@ const services = [
         ))}
       </List>
       <Divider sx={{ mt: 2, mb: 2 }} />
-    </Box>
+    </Container>
     </>
   );
 };
