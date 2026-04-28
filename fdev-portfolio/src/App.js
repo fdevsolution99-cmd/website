@@ -91,10 +91,10 @@ const TESTIMONIALS = [
 ];
 
 const STATS = [
-  { icon: <RocketLaunchIcon />, value: "120+", label: "Projects Delivered" },
-  { icon: <GroupsIcon />,       value: "70+",  label: "Happy Clients"      },
-  { icon: <EmojiEventsIcon />,  value: "10+",  label: "Industry Awards"    },
-  { icon: <PublicIcon />,       value: "8+",   label: "Years of Excellence" },
+  { icon: <RocketLaunchIcon />, value: "12+", label: "Projects Delivered" },
+  { icon: <GroupsIcon />,       value: "5+",  label: "Happy Clients"      },
+  // { icon: <EmojiEventsIcon />,  value: "10+",  label: "Industry Awards"    },
+  // { icon: <PublicIcon />,       value: "1+",   label: "Years of Excellence" },
 ];
 
 // ─── HELPERS ───────────────────────────────────────────────────────────────
