@@ -69,19 +69,19 @@ const SERVICES = [
 ];
 
 const PROJECTS = [
-  { title: "NestPay — FinTech Web App",     category: "Web Development", desc: "Real-time payments dashboard with live transaction feeds, fraud alerts, and multi-currency support. Processes ₹50Cr+ monthly for 15,000 users.", tech: ["React","Node.js","Redis","PostgreSQL"], accent: "#D4A017" },
-  { title: "DeliverNow — Logistics App",    category: "Mobile Apps",     desc: "Fleet management and last-mile delivery app with real-time GPS, route optimisation, and in-app driver comms. Serving 8,000+ drivers across AP & TS.", tech: ["React Native","Maps API","Firebase","AWS"], accent: "#C0A080" },
-  { title: "StudyLoop — EdTech Platform",   category: "Web Development", desc: "Award-winning e-learning platform with live classes, gamified progress tracking, and adaptive quizzes. 200+ courses and 25,000 active learners.", tech: ["Next.js","WebRTC","GraphQL","S3"], accent: "#D4A017" },
-  { title: "MedBook — Healthcare App",      category: "Mobile Apps",     desc: "Doctor appointment and teleconsultation app with secure video calls, prescription management, and health record storage. Live in 30+ clinics.", tech: ["React Native","WebRTC","Node.js","MongoDB"], accent: "#C0A080" },
-  { title: "ShopSphere — E-Commerce",       category: "Web Development", desc: "Multi-vendor marketplace with dynamic storefronts, AI-powered recommendations, and one-click checkout. Handles Black Friday spikes with zero downtime.", tech: ["Next.js","Stripe","Elasticsearch","Redis"], accent: "#D4A017" },
-  { title: "EventPulse — Events App",       category: "Mobile Apps",     desc: "Discover, book, and manage local events with QR check-in, social sharing, and organiser dashboards. 50,000+ downloads in the first six months.", tech: ["React Native","Node.js","Stripe","Mapbox"], accent: "#C0A080" },
+  { title: "HRMS — FinTech Web App",     category: "Web Development & mobile Apps", desc: "Real-time payments dashboard with live transaction feeds, fraud alerts, and multi-currency support. Processes ₹50Cr+ monthly for 15,000 users.", tech: ["React","Node.js","Redis","PostgreSQL"], accent: "#D4A017" },
+  { title: "My Test — Logistics App",    category: "Web Development",     desc: "Fleet management and last-mile delivery app with real-time GPS, route optimisation, and in-app driver comms. Serving 8,000+ drivers across AP & TS.", tech: ["React Native","Maps API","Firebase","AWS"], accent: "#C0A080" },
+  { title: "My Menu — EdTech Platform",   category: "Mobile Apps", desc: "Award-winning e-learning platform with live classes, gamified progress tracking, and adaptive quizzes. 200+ courses and 25,000 active learners.", tech: ["Next.js","WebRTC","GraphQL","S3"], accent: "#D4A017" },
+  { title: "Hospital management — Healthcare App",   category: "Mobile Apps",     desc: "Doctor appointment and teleconsultation app with secure video calls, prescription management, and health record storage. Live in 30+ clinics.", tech: ["React Native","WebRTC","Node.js","MongoDB"], accent: "#C0A080" },
+  { title: "ShopSphere — E-Commerce",       category: "Web Development & Mobile Apps", desc: "Multi-vendor marketplace with dynamic storefronts, AI-powered recommendations, and one-click checkout. Handles Black Friday spikes with zero downtime.", tech: ["Next.js","Stripe","Elasticsearch","Redis"], accent: "#D4A017" },
+  { title: "My Menu — Events App",       category: "Mobile Apps",     desc: "Discover, book, and manage local events with QR check-in, social sharing, and organiser dashboards. 50,000+ downloads in the first six months.", tech: ["React Native","Node.js","Stripe","Mapbox"], accent: "#C0A080" },
 ];
 
 const TEAM = [
-  { name: "Farhan Dev",    role: "Founder & CEO",        avatar: "FD", color: "#D4A017", bio: "10+ years shipping web and mobile products. Former senior engineer at Infosys. Obsessed with clean architecture and client outcomes." },
-  { name: "Sneha Kapoor", role: "Head of Mobile",        avatar: "SK", color: "#C0A080", bio: "React Native specialist who has shipped 20+ apps on the App Store and Play Store. Champion of 60fps UIs and offline-first architecture." },
-  { name: "Arjun Mehta",  role: "Lead Web Engineer",     avatar: "AM", color: "#D4A017", bio: "Next.js and Node.js expert with a love for performance budgets and pixel-perfect frontends. Previously at a Series B startup in Bangalore." },
-  { name: "Priya Nair",   role: "Lead UI/UX Designer",   avatar: "PN", color: "#C0A080", bio: "Design systems evangelist with 7 years shaping digital products. Bridges Figma and React with sharp attention to detail and user empathy." },
+  { name: "Kishore",    role: "Java full Stack Developer",        avatar: "FD", color: "#D4A017", bio: "10+ years shipping web and mobile products. Former senior engineer at Infosys. Obsessed with clean architecture and client outcomes." },
+  { name: "Samyuktha", role: "Java full Stack Developer",        avatar: "SK", color: "#C0A080", bio: "React Native specialist who has shipped 20+ apps on the App Store and Play Store. Champion of 60fps UIs and offline-first architecture." },
+  { name: "Kamal",  role: "Manager",     avatar: "AM", color: "#D4A017", bio: "Next.js and Node.js expert with a love for performance budgets and pixel-perfect frontends. Previously at a Series B startup in Bangalore." },
+  { name: "Supriya",   role: "Hr Recuiter",   avatar: "PN", color: "#C0A080", bio: "Design systems evangelist with 7 years shaping digital products. Bridges Figma and React with sharp attention to detail and user empathy." },
 ];
 
 const TESTIMONIALS = [
@@ -373,11 +373,17 @@ export default function FDevWebsite() {
                   <Box component="span" sx={{ color: "#D4A017" }}>Craft & Precision</Box>
                 </Typography>
                 <Typography sx={{ color: "#9A8F7A", mb: 3, fontSize: "0.97rem", lineHeight: 1.95 }}>
-                  Founded in Hyderabad, FDev Solutions Pvt Ltd is a specialised web and mobile development studio. We keep our team lean and our standards high — every project receives senior-level attention from discovery through deployment.
-                </Typography>
+                  At Fdev Solutions Pvt Ltd, we are a forward-thinking technology company dedicated to delivering innovative, scalable, and reliable digital solutions. With a strong focus on quality and performance, we help businesses transform their ideas into powerful digital products that drive growth and efficiency.
+                  </Typography>
                 <Typography sx={{ color: "#9A8F7A", mb: 4.5, fontSize: "0.97rem", lineHeight: 1.95 }}>
-                  We work closely with startups, scale-ups, and established businesses who want more than a vendor — they want a technical partner who understands their goals and takes full ownership of the outcome.
-                </Typography>
+                 Our expertise spans across web development, mobile application development, cloud solutions, and digital transformation services. We combine modern technologies with industry best practices to build solutions that are not only functional but also future-ready.
+                 </Typography>
+                 <Typography sx={{ color: "#9A8F7A", mb: 4.5, fontSize: "0.97rem", lineHeight: 1.95 }}>
+                 At our core, we believe in collaboration, transparency, and continuous improvement. Our team of skilled professionals works closely with clients to understand their unique requirements and deliver customized solutions that align with their business goals.
+                 </Typography>
+                 <Typography sx={{ color: "#9A8F7A", mb: 4.5, fontSize: "0.97rem", lineHeight: 1.95 }}>
+                 We are committed to empowering businesses by leveraging technology, enabling them to stay competitive in an ever-evolving digital landscape.
+                 </Typography>
                 {["Senior engineers on every engagement — no juniors on live projects", "Transparent weekly progress updates and open Slack access", "Agile sprints with client demos every two weeks", "Full source code handover and documentation on delivery"].map(item => (
                   <Box key={item} sx={{ display: "flex", gap: 2, mb: 2, alignItems: "flex-start" }}>
                     <CheckCircleIcon sx={{ color: "#D4A017", fontSize: 17, mt: 0.4, flexShrink: 0 }} />
@@ -390,7 +396,7 @@ export default function FDevWebsite() {
         </Box>
 
         {/* ══ SERVICES ════════════════════════════════════════════════════════ */}
-        <Box id="services" sx={{ py: { xs: 10, md: 15 }, background: "rgba(212,160,23,0.015)", borderTop: "1px solid rgba(212,160,23,0.07)" }}>
+        <Box id="services" sx={{ py: { xs: 10, md: 5 }, background: "rgba(212,160,23,0.015)", borderTop: "1px solid rgba(212,160,23,0.07)" }}>
           <Container maxWidth="lg">
             <Box sx={{ mb: 8 }}>
               <SectionEyebrow>What We Do</SectionEyebrow>
