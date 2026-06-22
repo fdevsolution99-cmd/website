@@ -1,7 +1,8 @@
 import React from "react";
-import {Typography, List, ListItem, ListItemText, Divider } from "@mui/material";
+import { Typography, List, ListItem, ListItemText, Divider } from "@mui/material";
 import Navbar from "../components/Navbar"
 import { Container, Paper } from "@mui/material";
+
 
 const WebAppServices = () => {
 const services = [

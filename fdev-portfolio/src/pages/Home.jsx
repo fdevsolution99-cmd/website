@@ -179,7 +179,7 @@ function Counter({ target, suffix = "", duration = 2000 }) {
 // ─── Nav ──────────────────────────────────────────────────────────
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", fn);

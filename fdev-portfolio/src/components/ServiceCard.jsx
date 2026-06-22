@@ -46,7 +46,7 @@ const ServiceCard = ({ title, description, icon, link }) => {
         onClick={() => window.location.href = link}
       >
         {/* Shimmer overlay */}
-        <Box 
+<Box 
           className="shimmer"
           sx={{
             position: 'absolute',
