@@ -1107,7 +1107,7 @@ function Team() {
             }}
           >
             <img
-              src={require("../asscets/ecommerce.jpg")}
+              src={require("../assets/image-4.jpeg")}
               alt="Company"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
@@ -1124,7 +1124,7 @@ function Team() {
             }}
           >
             <img
-              src={require("../asscets/arcimage.jpg")}
+              src={require("../assets/image-3.jpeg")}
               alt="Company"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
@@ -1141,7 +1141,7 @@ function Team() {
             }}
           >
             <img
-              src={require("../asscets/image1.jpeg")}
+              src={require("../assets/image-1.jpeg")}
               alt="Company"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
@@ -1158,7 +1158,7 @@ function Team() {
             }}
           >
             <img
-              src={require("../asscets/image2.jpeg")}
+              src={require("../assets/image-5.jpeg")}
               alt="Company"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
@@ -1458,6 +1458,11 @@ function Footer() {
 
       <p style={{ color: "#c1b928", fontSize: "0.82rem", margin: 0, fontWeight: 500}}>
         Gmail: hr@fdevsol.com  || Contact : 6309759843
+      </p>
+
+
+      <p style={{ color: "#c1b928", fontSize: "0.82rem", margin: 0, fontWeight: 500}}>
+      3A, Pacific Tower, RD 45, SBH colony, 100 Feet Road Madhapur, Telangana, 500081, India
       </p>
 
       {/* Social media link */}
