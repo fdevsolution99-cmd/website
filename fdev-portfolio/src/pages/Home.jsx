@@ -179,6 +179,7 @@ function Counter({ target, suffix = "", duration = 2000 }) {
 // ─── Nav ──────────────────────────────────────────────────────────
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
@@ -186,7 +187,23 @@ function Nav() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   const links = ["Home", "Services", "Work", "Stats", "Team", "Contact"];
+
+  const goTo = (label) => {
+    setMobileOpen(false);
+    const id = label.toLowerCase();
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    else window.location.hash = `#${id}`;
+  };
 
   return (
     <nav
@@ -200,13 +217,11 @@ function Nav() {
         alignItems: "center",
         justifyContent: "space-between",
         padding: "1rem 2rem",
-          background: scrolled
-          ? "rgba(1, 12, 9, 0.85)"
-          : "transparent",
-          backdropFilter: scrolled ? "blur(18px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(4, 35, 11, 0.25)" : "none",
-          transition: "all 0.4s ease",
-        }}
+        background: scrolled ? "rgba(1, 12, 9, 0.85)" : "transparent",
+        backdropFilter: scrolled ? "blur(18px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(4, 35, 11, 0.25)" : "none",
+        transition: "all 0.4s ease",
+      }}
     >
       <div
         style={{
@@ -223,13 +238,13 @@ function Nav() {
             width: 74,
             objectFit: "contain",
             flex: "0 0 auto",
-            marginTop: "-10"
+            marginTop: "-10",
           }}
         />
         <div
           style={{
             fontWeight: 800,
-            fontSize: "1.5rem",
+            fontSize: "1rem",
             background: "linear-gradient(90deg,#10b981,#f59e0b)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
@@ -237,11 +252,9 @@ function Nav() {
             color: "white",
           }}
         >
-          FDEV Solutions Pvt Ltd<span style={{ WebkitTextFillColor: "#fff" }}>.</span>
+          FDEV Solutions Pvt Ltd
         </div>
       </div>
-
-
 
       {/* Desktop links */}
       <ul
@@ -271,12 +284,12 @@ function Nav() {
             >
               {l}
             </a>
-
           </li>
         ))}
       </ul>
 
-      <a
+      {/* Desktop CTA */}
+      {/* <a
         href="#contact"
         style={{
           padding: "0.5rem 1.4rem",
@@ -299,7 +312,145 @@ function Nav() {
         }}
       >
         Hi
-      </a>
+      </a> */}
+
+      {/* Mobile hamburger */}
+      <button
+        type="button"
+        aria-label="Open menu"
+        onClick={() => setMobileOpen(true)}
+        style={{
+          display: "none",
+          border: "1px solid rgba(255,255,255,0.15)",
+          background: "rgba(255,255,255,0.05)",
+          color: "#fff",
+          width: 44,
+          height: 44,
+          borderRadius: 12,
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "pointer",
+        }}
+        className="mobile-menu-button"
+      >
+        <span style={{ fontSize: 20, lineHeight: 0 }}>
+          {mobileOpen ? "✕" : "☰"}
+        </span>
+      </button>
+
+      {/* Mobile slide-in */}
+      <div
+        aria-hidden={!mobileOpen}
+        onClick={() => setMobileOpen(false)}
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 200,
+          background: mobileOpen ? "rgba(0,0,0,0.35)" : "transparent",
+          opacity: mobileOpen ? 1 : 0,
+          pointerEvents: mobileOpen ? "auto" : "none",
+          transition: "opacity 0.2s ease",
+        }}
+      >
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            height: "100%",
+            width: "78%",
+            maxWidth: 360,
+            background: "rgba(2, 22, 2, 0.97)",
+            backdropFilter: "blur(18px)",
+            borderLeft: "1px solid rgba(255,255,255,0.12)",
+            transform: mobileOpen ? "translateX(0)" : "translateX(110%)",
+            transition: "transform 0.25s ease",
+            padding: "1.25rem 1rem",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <div
+              style={{
+                fontWeight: 900,
+                fontSize: "1.2rem",
+                background: "linear-gradient(90deg,#10b981,#f59e0b)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                color: "white",
+              }}
+            >
+              FDEV
+            </div>
+            <button
+              type="button"
+              onClick={() => setMobileOpen(false)}
+              style={{
+                border: "1px solid rgba(255,255,255,0.15)",
+                background: "rgba(255,255,255,0.05)",
+                color: "#fff",
+                width: 42,
+                height: 42,
+                borderRadius: 12,
+                cursor: "pointer",
+              }}
+            >
+              ✕
+            </button>
+          </div>
+
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
+            {links.map((l) => (
+              <li key={l}>
+                <a
+                  href={`#${l.toLowerCase()}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goTo(l);
+                  }}
+                  style={{
+                    display: "block",
+                    padding: "0.85rem 0.9rem",
+                    borderRadius: 14,
+                    textDecoration: "none",
+                    color: "rgba(255,255,255,0.85)",
+                    border: "1px solid rgba(255,255,255,0.10)",
+                    background: "rgba(255,255,255,0.03)",
+                    fontWeight: 600,
+                  }}
+                >
+                  {l}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              setMobileOpen(false);
+              goTo("Contact");
+            }}
+            style={{
+              marginTop: "auto",
+              padding: "0.95rem 1rem",
+              textAlign: "center",
+              background: "linear-gradient(135deg,#8b5cf6,#6d28d9)",
+              color: "#fff",
+              textDecoration: "none",
+              borderRadius: 16,
+              fontWeight: 800,
+              boxShadow: "0 10px 32px rgba(139,92,246,0.35)",
+            }}
+          >
+            Hi
+          </a>
+        </div>
+      </div>
     </nav>
   );
 }
@@ -1394,6 +1545,7 @@ export default function App() {
         ::placeholder { color: rgba(255,255,255,0.25); }
         @media (max-width: 640px) {
           .desktop-nav { display: none !important; }
+          .mobile-menu-button { display: inline-flex !important; }
         }
         @keyframes float {
           0%,100% { transform: translateY(0); }
