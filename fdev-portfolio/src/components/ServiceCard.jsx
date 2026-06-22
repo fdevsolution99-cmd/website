@@ -31,7 +31,6 @@ const ServiceCard = ({ title, description, icon, link }) => {
             },
           },
           '&::before': {
-            content: '\"\"',
             position: 'absolute',
             top: 0,
             left: -100,

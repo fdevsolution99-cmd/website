@@ -1,5 +1,5 @@
 import React from 'react';
-import {Typography, Grid, Card, CardMedia, Box } from '@mui/material';
+import {Typography, Grid, Card, CardMedia } from '@mui/material';
 
 import image2 from '../asscets/image2.jpeg';
 import image3 from '../asscets/image3.jpeg';
