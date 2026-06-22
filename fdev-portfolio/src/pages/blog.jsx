@@ -4,13 +4,13 @@ import {Typography, Grid, Card, CardMedia, Box } from '@mui/material';
 import image2 from '../asscets/image2.jpeg';
 import image3 from '../asscets/image3.jpeg';
 import image4 from '../asscets/image4.jpeg';
-import Navbar from "../components/Navbar";
+
 import { Container } from "@mui/material";
 
 const Blog = () => {
   return (<>
-  <Navbar/>
     <Container sx={{ py: 8 }}>
+
         <Typography variant="h2" align="center" gutterBottom className="fade-in-up">
           Latest Blog Posts
         </Typography>

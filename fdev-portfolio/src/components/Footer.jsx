@@ -6,10 +6,10 @@ export default function Footer() {
       sx={{
         minHeight: "40vh",
         py: 4,
-        background: 'linear-gradient(135deg, rgba(248, 250, 252, 0.9), rgba(226, 232, 240, 0.9))',
+       background: "rgba(2, 22, 2, 0.95)",
         backdropFilter: 'blur(20px)',
         borderTop: '1px solid rgba(255, 255, 255, 0.2)',
-        color: 'text.primary',
+        color: 'white',
       }}
     >
       <Grid
@@ -18,6 +18,7 @@ export default function Footer() {
         sx={{
           maxWidth: "1200px",
           mx: "auto",
+
         }}
       >
         {/* Get in Touch */}

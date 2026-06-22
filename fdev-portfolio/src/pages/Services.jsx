@@ -1,5 +1,5 @@
 import { Container, Typography, Grid } from "@mui/material";
-import Navbar from "../components/Navbar";
+
 import ServiceCard from '../components/ServiceCard';
 
 const servicesData = [
@@ -44,8 +44,8 @@ const servicesData = [
 export default function Services() {
   return (
     <>
-      <Navbar />
       <Container sx={{ py: 8 }}>
+
         <Typography variant="h2" align="center" gutterBottom className="fade-in-up">
           Our Services
         </Typography>

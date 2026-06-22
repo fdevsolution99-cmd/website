@@ -12,7 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import logo from "../assets/logo.png";
+import logo from "../asscets/logo.png";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -28,6 +28,7 @@ export default function Navbar() {
 
   const navItems = [
     { label: "Home", path: "/" },
+        { label: "About", path: "/about" },
     { label: "Projects", path: "/projects" },
     { label: "Blog", path: "/Blog" },
     { label: "Contact", path: "/contact" },
@@ -38,7 +39,7 @@ export default function Navbar() {
       position="sticky"
       sx={{
         backdropFilter: 'blur(20px)',
-        background: 'rgba(255, 255, 255, 0.95)',
+        background: 'rgba(48, 93, 48, 0.95)',
         boxShadow: '0 2px 20px rgba(0,0,0,0.1)',
       }}
     >
@@ -53,7 +54,8 @@ export default function Navbar() {
             textDecoration: "none",
             color: "inherit",
             flexGrow: 1,
-            gap: 1,
+          
+            
           }}
         >
           <Box
@@ -61,16 +63,18 @@ export default function Navbar() {
             src={logo}
             alt="Logo"
             sx={{
-              height: { xs: 40, md: 50 },
-              width: "auto",
+              height: { xs: 60,},
+              // width: "auto",
+              // marginRight: { xs: 0, md: 0 },
             }}
           />
           <Typography
             variant="h6"
             sx={{
+              // marginLeft: 0,
               fontSize: { xs: "1rem", md: "1.2rem" },
-            fontWeight: 700,
-              whiteSpace: "nowrap",
+              // fontWeight: 700,
+              // whiteSpace: "nowrap",
             }}
           >
             FDEV Solution Pvt Ltd
@@ -78,7 +82,7 @@ export default function Navbar() {
         </Box>
 
         {/* Desktop Menu */}
-        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 0.2 }}>
           {navItems.map((item) => (
             <Button
               key={item.label}
@@ -86,11 +90,8 @@ export default function Navbar() {
               component={Link}
               to={item.path}
               sx={{
-                fontWeight: 500,
-                "&:hover": {
-                  color: "#6366F1",
-                  transform: 'scale(1.05)',
-                },
+                fontWeight: 400,
+                  color: "#f6f6f8",
               }}
             >
               {item.label}

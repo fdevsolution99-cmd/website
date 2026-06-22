@@ -1,12 +1,12 @@
 import { Container, TextField, Button, Typography } from "@mui/material";
-import Navbar from "../components/Navbar";
+
 import {Grid, Card, CardContent, Paper } from "@mui/material";
 
 export default function Contact() {
   return (
     <>
-      <Navbar />
       <Container maxWidth="md" sx={{ py: 8 }}>
+
         <Typography variant="h2" align="center" gutterBottom className="fade-in-up">
           Get In Touch
         </Typography>

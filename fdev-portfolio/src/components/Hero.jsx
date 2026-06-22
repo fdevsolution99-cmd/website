@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <Box className="hero-section hero-bg" sx={{ position: 'relative', overflow: 'hidden' }}>
       {/* Animated background particles */}
-      <Box
+      {/* <Box
         sx={{
           position: 'absolute',
           top: 0,
@@ -16,9 +16,9 @@ export default function Hero() {
           opacity: 0.1,
           backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%)',
         }}
-      />
+      /> */}
       
-      <Container sx={{ position: 'relative', zIndex: 2 }}>
+      {/* <Container sx={{ position: 'relative', zIndex: 2 }}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function Hero() {
             </Button>
           </Box>
         </motion.div>
-      </Container>
+      </Container> */}
     </Box>
   );
 }

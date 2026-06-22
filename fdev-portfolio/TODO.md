@@ -1,11 +1,9 @@
-# Task: Enhance & Add image3.jpeg from asscets to App.js
+# TODO
 
-## Steps:
-- [ ] 1. Create/update TODO.md with this task
-- [ ] 2. Add import HeroImage from './asscets/image3.jpeg' in App.js
-- [ ] 3. Add new HeroImageSection after current Hero Grid in App.js
-- [ ] 4. Style section attractively: responsive img, gold overlay, animations
-- [ ] 5. Test: cd fdev-portfolio && npm start
-- [ ] 6. Mark complete & attempt_completion
+- [ ] Inspect current About page implementation (done during planning).
+- [x] Add a background image section/styling to `src/pages/About.jsx`.
+- [x] Ensure the image asset is loaded correctly (via import from `src/assets` or using an existing path).
+- [x] Add/adjust any CSS for overlay/contrast if needed.
+- [ ] Run the app (lint/build) to confirm there are no runtime errors.
 
-Previous tasks completed ✓
+

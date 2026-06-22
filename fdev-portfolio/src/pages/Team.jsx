@@ -1,5 +1,5 @@
-import { Container, Typography, Grid } from "@mui/material";
-import Navbar from "../components/Navbar";
+import { Container, Typography, Grid, Box } from "@mui/material";
+
 import TeamCard from '../components/TeamCard';
 
 const teamMembers = [
@@ -51,8 +51,8 @@ const teamMembers = [
 export default function Team() {
   return (
     <>
-      <Navbar />
       <Container sx={{ py: 12 }}>
+
         <Box sx={{ textAlign: 'center', mb: 10 }}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2.5rem', md: '3.5rem' }, mb: 3 }}>
             Meet Our Team

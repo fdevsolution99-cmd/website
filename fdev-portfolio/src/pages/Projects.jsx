@@ -1,6 +1,7 @@
-import { Container, Typography, Grid } from "@mui/material";
-import Navbar from "../components/Navbar";
-import ProjectCard from '../components/ProjectCard';
+import { useState } from "react";
+import { Box, Button, Container, Dialog, DialogContent, DialogTitle, Grid, Typography } from "@mui/material";
+
+import ProjectCard from "../components/ProjectCard";
 
 const projectsData = [
   {
@@ -69,9 +70,8 @@ export default function Projects() {
 
   return (
     <>
-      <Navbar />
-
       <Container sx={{ py: 8 }}>
+
         <Typography variant="h2" align="center" gutterBottom sx={{ mb: 12 }}>
           Featured Projects
         </Typography>
@@ -82,7 +82,9 @@ export default function Projects() {
         <Grid container spacing={4}>
           {projectsData.map((project, index) => (
             <Grid item xs={12} md={6} lg={4} key={project.title}>
-              <ProjectCard {...project} />
+              <Box onClick={() => handleOpen(project)} sx={{ cursor: "pointer" }}>
+                <ProjectCard {...project} />
+              </Box>
             </Grid>
           ))}
         </Grid>
@@ -92,14 +94,14 @@ export default function Projects() {
       <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
         {selectedProject && (
           <>
-            <DialogTitle>{selectedProject.name}</DialogTitle>
+            <DialogTitle>{selectedProject.title}</DialogTitle>
 
             <DialogContent>
               {selectedProject.image && (
                 <Box sx={{ mb: 2 }}>
                   <img
                     src={selectedProject.image}
-                    alt={selectedProject.name}
+                    alt={selectedProject.title}
                     style={{ width: "100%", borderRadius: 8 }}
                   />
                 </Box>
@@ -110,14 +112,14 @@ export default function Projects() {
               </Typography>
 
               <Typography variant="subtitle2" color="text.secondary">
-                <strong>Technologies:</strong> {selectedProject.tech}
+                <strong>Technologies:</strong> {Array.isArray(selectedProject.tags) ? selectedProject.tags.join(", ") : "-"}
               </Typography>
 
               <Box sx={{ mt: 3, textAlign: "right" }}>
                 <Button
                   variant="contained"
                   color="primary"
-                  href={selectedProject.link}
+                  href={selectedProject.live}
                   target="_blank"
                 >
                   View Project
